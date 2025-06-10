@@ -135,13 +135,14 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffcd3c 100%);
             color: white;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
         .hero::before {
@@ -532,9 +533,62 @@
             box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
         }
 
+        .logo-item img {
+            max-width: 80px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-item:hover img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3));
+            transform: scale(1.1);
+        }
+
         .logo-item span {
             font-weight: 700;
             font-size: 1rem;
+            color: white;
+        }
+
+        .logo-item img {
+            max-width: 80px;
+            max-height: 60px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-item:hover img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.3));
+            transform: scale(1.1);
+        }
+
+        /* Fallback text styling when images don't load */
+        .logo-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.9rem;
             color: white;
         }
 
@@ -897,21 +951,51 @@
                 <p>Leading brands choose Victory for their global logistics needs</p>
             </div>
             <div class="logo-grid">
-                <div class="logo-item"><span>ADIDAS</span></div>
-                <div class="logo-item"><span>INTEL</span></div>
-                <div class="logo-item"><span>TOYOTA</span></div>
-                <div class="logo-item"><span>SHELL</span></div>
-                <div class="logo-item"><span>APPLE</span></div>
-                <div class="logo-item"><span>McDONALD'S</span></div>
-                <div class="logo-item"><span>UNILEVER</span></div>
-                <div class="logo-item"><span>COCA COLA</span></div>
-                <div class="logo-item"><span>P&G</span></div>
-                <div class="logo-item"><span>VOLKSWAGEN</span></div>
-                <div class="logo-item"><span>GSK</span></div>
-                <div class="logo-item"><span>VISA</span></div>
-                <div class="logo-item"><span>ADOBE</span></div>
-                <div class="logo-item"><span>PELCO</span></div>
-                <div class="logo-item"><span>NSRTTC</span></div>
+                <div class="logo-item">
+                    <img src="./logos/Adidas.svg" alt="Adidas" onerror="this.style.display='none'; this.parentNode.innerHTML='ADIDAS';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Intel.svg" alt="Intel" onerror="this.style.display='none'; this.parentNode.innerHTML='INTEL';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Toyota.svg" alt="Toyota" onerror="this.style.display='none'; this.parentNode.innerHTML='TOYOTA';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Shell.svg" alt="Shell" onerror="this.style.display='none'; this.parentNode.innerHTML='SHELL';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Apple.svg" alt="Apple" onerror="this.style.display='none'; this.parentNode.innerHTML='APPLE';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/McDonald.svg" alt="McDonald's" onerror="this.style.display='none'; this.parentNode.innerHTML='McDONALD';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Unilever.svg" alt="Unilever" onerror="this.style.display='none'; this.parentNode.innerHTML='UNILEVER';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Coca-Cola.svg" alt="Coca-Cola" onerror="this.style.display='none'; this.parentNode.innerHTML='COCA COLA';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/P&G.svg" alt="P&G" onerror="this.style.display='none'; this.parentNode.innerHTML='P&G';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/Volkswagen.svg" alt="Volkswagen" onerror="this.style.display='none'; this.parentNode.innerHTML='VOLKSWAGEN';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/gasco.svg" alt="Gasco" onerror="this.style.display='none'; this.parentNode.innerHTML='GSK';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/visa.svg" alt="Visa" onerror="this.style.display='none'; this.parentNode.innerHTML='VISA';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/adobe.svg" alt="Adobe" onerror="this.style.display='none'; this.parentNode.innerHTML='ADOBE';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/pfizer.svg" alt="Pfizer" onerror="this.style.display='none'; this.parentNode.innerHTML='PELCO';" />
+                </div>
+                <div class="logo-item">
+                    <img src="./logos/contemporary.svg" alt="Contemporary" onerror="this.style.display='none'; this.parentNode.innerHTML='NSRTTC';" />
+                </div>
             </div>
         </div>
     </section>
@@ -1057,7 +1141,7 @@
         });
 
         // Counter animation for stats
-        function animateCounter(element, target) {
+        function animateCounter(element, target, originalText) {
             let count = 0;
             const increment = target / 100;
             const timer = setInterval(() => {
@@ -1066,7 +1150,20 @@
                     count = target;
                     clearInterval(timer);
                 }
-                element.textContent = Math.floor(count) + (target >= 1000 ? 'K+' : target === 99.8 ? '.8%' : target === 195 ? '' : target === 24 ? '/7' : '+');
+                
+                // Determine the correct suffix based on original text
+                let displayText = Math.floor(count);
+                if (originalText.includes('K+')) {
+                    displayText = Math.floor(count / 1000) + 'K+';
+                } else if (originalText.includes('%')) {
+                    displayText = count.toFixed(1) + '%';
+                } else if (originalText.includes('/7')) {
+                    displayText = Math.floor(count) + '/7';
+                } else {
+                    displayText = Math.floor(count);
+                }
+                
+                element.textContent = displayText;
             }, 20);
         }
 
@@ -1076,15 +1173,21 @@
                 if (entry.isIntersecting) {
                     const statNumbers = entry.target.querySelectorAll('.stat-number');
                     statNumbers.forEach(stat => {
-                        const text = stat.textContent;
+                        const originalText = stat.textContent;
                         let target;
-                        if (text.includes('K+')) target = parseInt(text) * 1000;
-                        else if (text.includes('%')) target = parseFloat(text);
-                        else if (text.includes('/')) target = parseInt(text);
-                        else target = parseInt(text);
+                        
+                        if (originalText.includes('K+')) {
+                            target = parseInt(originalText) * 1000;
+                        } else if (originalText.includes('%')) {
+                            target = parseFloat(originalText);
+                        } else if (originalText.includes('/')) {
+                            target = parseInt(originalText);
+                        } else {
+                            target = parseInt(originalText);
+                        }
                         
                         stat.textContent = '0';
-                        animateCounter(stat, target);
+                        animateCounter(stat, target, originalText);
                     });
                     statsObserver.unobserve(entry.target);
                 }
@@ -1096,13 +1199,27 @@
             statsObserver.observe(statsSection);
         }
 
-        // Parallax effect for hero section
+        // Enhanced parallax effect with fine-tuning
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallax = document.querySelector('.hero');
-            if (parallax) {
-                const speed = scrolled * 0.5;
-                parallax.style.transform = `translateY(${speed}px)`;
+            const heroHeight = parallax.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            if (parallax && scrolled < heroHeight + windowHeight * 0.3) {
+                // Extended parallax range for smoother transition
+                const progress = scrolled / (heroHeight + windowHeight * 0.3);
+                const speed = scrolled * 0.2; // Even smoother speed
+                const maxTransform = heroHeight * 0.15; // Reduced max transform
+                const easeOut = 1 - Math.pow(1 - progress, 3); // Cubic ease-out
+                const transform = Math.min(speed * easeOut, maxTransform);
+                
+                parallax.style.transform = `translateY(${transform}px)`;
+                parallax.style.transition = 'none'; // Disable transition during scroll
+            } else if (parallax) {
+                // Smooth reset with transition
+                parallax.style.transition = 'transform 0.3s ease-out';
+                parallax.style.transform = 'translateY(0px)';
             }
         });
 
