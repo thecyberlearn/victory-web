@@ -652,6 +652,23 @@
             box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
         }
 
+        .client-luxury-item img {
+            max-width: 75px;
+            max-height: 55px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.4s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .client-luxury-item:hover img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+            transform: scale(1.15);
+        }
+
         .client-luxury-item span {
             font-weight: 600;
             font-size: 1.1rem;
@@ -1087,23 +1104,56 @@
                 <p>Trusted by the world's most prestigious brands and forward-thinking enterprises</p>
             </div>
             <div class="clients-luxury-grid">
-                <div class="client-luxury-item"><span>ADIDAS</span></div>
-                <div class="client-luxury-item"><span>INTEL</span></div>
-                <div class="client-luxury-item"><span>TOYOTA</span></div>
-                <div class="client-luxury-item"><span>SHELL</span></div>
-                <div class="client-luxury-item"><span>APPLE</span></div>
-                <div class="client-luxury-item"><span>McDONALD'S</span></div>
-                <div class="client-luxury-item"><span>UNILEVER</span></div>
-                <div class="client-luxury-item"><span>COCA COLA</span></div>
-                <div class="client-luxury-item"><span>P&G</span></div>
-                <div class="client-luxury-item"><span>VOLKSWAGEN</span></div>
-                <div class="client-luxury-item"><span>GSK</span></div>
-                <div class="client-luxury-item"><span>VISA</span></div>
-                <div class="client-luxury-item"><span>ADOBE</span></div>
-                <div class="client-luxury-item"><span>PELCO</span></div>
-                <div class="client-luxury-item"><span>NSRTTC</span></div>
-                <div class="client-luxury-item"><span>PTMC</span></div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Adidas.svg" alt="Adidas" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>ADIDAS</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Intel.svg" alt="Intel" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>INTEL</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Toyota.svg" alt="Toyota" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>TOYOTA</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Shell.svg" alt="Shell" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>SHELL</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Apple.svg" alt="Apple" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>APPLE</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/McDonald.svg" alt="McDonald's" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>McDONALD</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Unilever.svg" alt="Unilever" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>UNILEVER</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Coca-Cola.svg" alt="Coca-Cola" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>COCA COLA</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/P&G.svg" alt="P&G" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>P&G</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/Volkswagen.svg" alt="Volkswagen" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>VOLKSWAGEN</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/glaxosmithkline.svg" alt="GlaxoSmithKline" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>GSK</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/visa.svg" alt="Visa" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>VISA</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/adobe.svg" alt="Adobe" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>ADOBE</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/fedex.svg" alt="FedEx" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>PELCO</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/contemporary.svg" alt="Contemporary" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>NSRTTC</span>';" />
+                </div>
+                <div class="client-luxury-item">
+                    <img src="./logos/pfizer.svg" alt="Pfizer" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>PTMC</span>';" />
+                </div>
             </div>
+            
         </div>
     </section>
 

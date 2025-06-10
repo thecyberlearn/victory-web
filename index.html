@@ -364,6 +364,23 @@
             box-shadow: 0 20px 40px rgba(52, 152, 219, 0.2);
         }
 
+        .logo-card img {
+            max-width: 70px;
+            max-height: 50px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-card:hover img {
+            filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.4));
+            transform: scale(1.1);
+        }
+
         .logo-card span {
             font-weight: 700;
             font-size: 0.95rem;
@@ -801,26 +818,69 @@
                 <p>Powering global commerce for Fortune 500 companies</p>
             </div>
             <div class="logo-carousel">
-                <div class="logo-card"><span>ADIDAS</span></div>
-                <div class="logo-card"><span>INTEL</span></div>
-                <div class="logo-card"><span>NSRTTC</span></div>
-                <div class="logo-card"><span>PTMC</span></div>
-                <div class="logo-card"><span>VOLKSWAGEN</span></div>
-                <div class="logo-card"><span>BURAK</span></div>
-                <div class="logo-card"><span>TOYOTA</span></div>
-                <div class="logo-card"><span>SHELL</span></div>
-                <div class="logo-card"><span>GSK</span></div>
-                <div class="logo-card"><span>OPEL</span></div>
-                <div class="logo-card"><span>PELCO</span></div>
-                <div class="logo-card"><span>McDONALD'S</span></div>
-                <div class="logo-card"><span>UNILEVER</span></div>
-                <div class="logo-card"><span>VILLMER</span></div>
-                <div class="logo-card"><span>COCA COLA</span></div>
-                <div class="logo-card"><span>APPLE</span></div>
-                <div class="logo-card"><span>P&G</span></div>
-                <div class="logo-card"><span>ADOBE</span></div>
-                <div class="logo-card"><span>DEPO</span></div>
-                <div class="logo-card"><span>VISA</span></div>
+                <div class="logo-card">
+                    <img src="./logos/Adidas.svg" alt="Adidas" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>ADIDAS</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Intel.svg" alt="Intel" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>INTEL</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/contemporary.svg" alt="Contemporary" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>NSRTTC</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/pfizer.svg" alt="Pfizer" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>PTMC</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Volkswagen.svg" alt="Volkswagen" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>VOLKSWAGEN</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/dubai.svg" alt="Dubai" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>BURAK</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Toyota.svg" alt="Toyota" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>TOYOTA</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Shell.svg" alt="Shell" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>SHELL</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/glaxosmithkline.svg" alt="GlaxoSmithKline" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>GSK</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/mobil.svg" alt="Mobil" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>OPEL</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/fedex.svg" alt="FedEx" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>PELCO</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/McDonald.svg" alt="McDonald's" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>McDONALD</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Unilever.svg" alt="Unilever" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>UNILEVER</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/volvo.svg" alt="Volvo" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>VILLMER</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Coca-Cola.svg" alt="Coca-Cola" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>COCA COLA</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/Apple.svg" alt="Apple" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>APPLE</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/P&G.svg" alt="P&G" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>P&G</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/adobe.svg" alt="Adobe" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>ADOBE</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/gasco.svg" alt="Gasco" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>DEPO</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/visa.svg" alt="Visa" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>VISA</span>';" />
+                </div>
+                <div class="logo-card">
+                    <img src="./logos/exxon.svg" alt="exxon" onerror="this.style.display='none'; this.parentNode.innerHTML='<span>EXXON</span>';" />
+                </div>
             </div>
         </div>
     </section>
@@ -886,7 +946,7 @@
                 <div class="network-text">
                     <h2>Connected to each corner of the globe</h2>
                     <p>We're an envisioned glowing experience through the regions sertiliently designed to one of thousands global markets.</p>
-                    <p>VictoryS partner in ausines with S05 industry's experience and partnerships to suemes.</p>
+                    <p>Victory partner in ausines with S05 industry's experience and partnerships to suemes.</p>
                 </div>
                 <div class="bottom-visual">
                     <img src="corridor.png" alt="Container Yard" />
