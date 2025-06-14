@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory International Trading LLC - Global Trade Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-slide-up { animation: slideUp 0.6s ease-out; }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+        .animate-scale-in { animation: scaleIn 0.5s ease-out; }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .neumorphism {
+            background: #ffffff;
+            box-shadow: 
+                20px 20px 60px #d1d5db,
+                -20px -20px 60px #ffffff;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #065f46, #047857, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(5, 150, 105, 0.1);
+        }
+        
+        /* Custom emerald color system */
+        .bg-emerald-50 { background-color: #ecfdf5; }
+        .bg-emerald-100 { background-color: #d1fae5; }
+        .bg-emerald-500 { background-color: #10b981; }
+        .bg-emerald-600 { background-color: #059669; }
+        .bg-emerald-700 { background-color: #047857; }
+        .bg-emerald-900 { background-color: #064e3b; }
+        
+        .text-emerald-500 { color: #10b981; }
+        .text-emerald-600 { color: #059669; }
+        .text-emerald-700 { color: #047857; }
+        .text-emerald-900 { color: #064e3b; }
+        
+        .border-emerald-200 { border-color: #a7f3d0; }
+        .border-emerald-500 { border-color: #10b981; }
+        
+        .from-emerald-500 { --tw-gradient-from: #10b981; }
+        .to-emerald-600 { --tw-gradient-to: #059669; }
+        
+        .focus\:border-emerald-500:focus { border-color: #10b981; }
+        
+        .hover\:text-emerald-600:hover { color: #059669; }
+        .hover\:border-emerald-500:hover { border-color: #10b981; }
+        .hover\:bg-emerald-600:hover { background-color: #059669; }
+        
+        .shadow-emerald-500\/25 { box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25); }
+        
+        /* Brand logos grid animation */
+        .brand-scroll {
+            animation: scroll 30s linear infinite;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Navigation */
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                                <span class="text-white font-bold text-xl">V</span>
+                            </div>
+                            <div>
+                                <h1 class="font-jakarta font-bold text-xl text-gray-900">Victory</h1>
+                                <p class="text-xs text-gray-500 -mt-1">International Trading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#services" class="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#products" class="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Products</a>
+                        <a href="#network" class="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Network</a>
+                        <a href="#contact" class="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition-colors shadow-emerald-500/25">
+                        Get Quote
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-500 hover:text-gray-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center">
+                <div class="animate-slide-up">
+                    <h1 class="text-4xl md:text-6xl font-jakarta font-bold text-gray-900 mb-6">
+                        Global Trade 
+                        <span class="gradient-text">Excellence</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                        Connecting markets worldwide since 1988. Your trusted partner for FMCG, commodities, and automotive trading across 5 countries.
+                    </p>
+                </div>
+                
+                <div class="animate-fade-in flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-600 transition-all transform hover:scale-105 shadow-emerald-500/25">
+                        Start Trading
+                    </button>
+                    <button class="border-2 border-emerald-500 text-emerald-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-50 transition-all">
+                        Our Products
+                    </button>
+                </div>
+                
+                <!-- Stats -->
+                <div class="animate-scale-in grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">35+</div>
+                        <div class="text-gray-600 font-medium">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">1000+</div>
+                        <div class="text-gray-600 font-medium">Products</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">5</div>
+                        <div class="text-gray-600 font-medium">Countries</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl md:text-4xl font-bold text-emerald-600 mb-2">100%</div>
+                        <div class="text-gray-600 font-medium">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Showcase -->
+    <section class="py-12 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h3 class="text-lg font-semibold text-gray-600 mb-4">Trusted by Leading Global Brands</h3>
+            </div>
+            <div class="overflow-hidden">
+                <div class="flex space-x-8 brand-scroll">
+                    <div class="flex space-x-8 min-w-full">
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-blue-600">Nestlé</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-red-600">Coca-Cola</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-blue-800">Unilever</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-purple-600">Cadbury</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-green-600">Sprite</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-yellow-600">Lipton</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-8 min-w-full">
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-blue-600">Nestlé</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-red-600">Coca-Cola</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-blue-800">Unilever</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-purple-600">Cadbury</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-green-600">Sprite</span>
+                        </div>
+                        <div class="w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="font-bold text-yellow-600">Lipton</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Comprehensive Trade Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From FMCG distribution to automotive solutions, we deliver end-to-end trading services across global markets
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🛒</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">FMCG Products</h3>
+                    <p class="text-gray-600 mb-6">Fast-moving consumer goods distribution across global markets with established supply chains.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📦</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Commodities Trading</h3>
+                    <p class="text-gray-600 mb-6">Raw materials and commodity sourcing worldwide with competitive pricing and quality assurance.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🚗</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Automotive Solutions</h3>
+                    <p class="text-gray-600 mb-6">Complete automotive trading including vehicles, tires, and parts distribution services.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🚢</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Export Services</h3>
+                    <p class="text-gray-600 mb-6">Comprehensive export facilitation, documentation, and logistics management.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📥</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Import Solutions</h3>
+                    <p class="text-gray-600 mb-6">End-to-end import management including customs clearance and distribution.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🌐</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Global Logistics</h3>
+                    <p class="text-gray-600 mb-6">Worldwide shipping and distribution network with real-time tracking capabilities.</p>
+                    <button class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-6">
+                        35+ Years of Global Excellence
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Since 1988, Victory International Trading LLC has been at the forefront of global commerce, 
+                        connecting markets and building lasting partnerships across continents.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Established in 1988 in Dubai</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">FMCG & Commodities Specialists</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">Trusted by 1000+ Global Partners</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mr-4">
+                                <span class="text-white text-sm">✓</span>
+                            </div>
+                            <span class="text-gray-700">5-Country Network Presence</span>
+                        </div>
+                    </div>
+                    
+                    <button class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition-colors">
+                        Our Story
+                    </button>
+                </div>
+                
+                <div class="relative">
+                    <div class="glassmorphism rounded-2xl p-8">
+                        <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-6">Our Journey</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-emerald-600 font-bold">1988</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Founded in Dubai</h4>
+                                    <p class="text-gray-600 text-sm">Established headquarters in UAE</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-emerald-600 font-bold">1995</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Singapore Expansion</h4>
+                                    <p class="text-gray-600 text-sm">Entered ASEAN markets</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-emerald-600 font-bold">2000</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Indian Operations</h4>
+                                    <p class="text-gray-600 text-sm">Established Mumbai office</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-emerald-600 font-bold">2025</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Global Leader</h4>
+                                    <p class="text-gray-600 text-sm">Leading trade solutions provider</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network -->
+    <section id="network" class="py-20 bg-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Global Network
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Strategically located offices across key international markets
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neumorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">🇦🇪</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold text-gray-900 mb-2">Dubai, UAE</h3>
+                    <p class="text-gray-600 mb-3">Headquarters & Regional Hub</p>
+                    <p class="text-sm text-gray-500">📞 +971-XX-XXXXXXX</p>
+                    <p class="text-sm text-gray-500">✉️ dubai@victory.com</p>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">🇸🇬</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold text-gray-900 mb-2">Singapore</h3>
+                    <p class="text-gray-600 mb-3">ASEAN Operations Center</p>
+                    <p class="text-sm text-gray-500">📞 +65-XXXX-XXXX</p>
+                    <p class="text-sm text-gray-500">✉️ singapore@victory.com</p>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">🇮🇳</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold text-gray-900 mb-2">Mumbai, India</h3>
+                    <p class="text-gray-600 mb-3">South Asia Operations</p>
+                    <p class="text-sm text-gray-500">📞 +91-XX-XXXXXXXX</p>
+                    <p class="text-sm text-gray-500">✉️ india@victory.com</p>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">🇲🇲</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold text-gray-900 mb-2">Yangon, Myanmar</h3>
+                    <p class="text-gray-600 mb-3">Myanmar Market Access</p>
+                    <p class="text-sm text-gray-500">📞 +95-X-XXXXXXX</p>
+                    <p class="text-sm text-gray-500">✉️ myanmar@victory.com</p>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">🇮🇩</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold text-gray-900 mb-2">Jakarta, Indonesia</h3>
+                    <p class="text-gray-600 mb-3">Indonesia Operations</p>
+                    <p class="text-sm text-gray-500">📞 +62-XX-XXXXXXXX</p>
+                    <p class="text-sm text-gray-500">✉️ indonesia@victory.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Product Portfolio
+                </h2>
+                <p class="text-xl text-gray-600">
+                    1000+ premium products across multiple categories
+                </p>
+            </div>
+            
+            <!-- Product Categories Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="product-filter-btn active bg-emerald-500 text-white px-6 py-3 rounded-full font-medium transition-all" data-filter="all">
+                    All Products
+                </button>
+                <button class="product-filter-btn border-2 border-emerald-500 text-emerald-600 px-6 py-3 rounded-full font-medium hover:bg-emerald-50 transition-all" data-filter="fmcg">
+                    FMCG
+                </button>
+                <button class="product-filter-btn border-2 border-emerald-500 text-emerald-600 px-6 py-3 rounded-full font-medium hover:bg-emerald-50 transition-all" data-filter="commodities">
+                    Commodities
+                </button>
+                <button class="product-filter-btn border-2 border-emerald-500 text-emerald-600 px-6 py-3 rounded-full font-medium hover:bg-emerald-50 transition-all" data-filter="automotive">
+                    Automotive
+                </button>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="fmcg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Consumer Electronics</h3>
+                    <p class="text-gray-600 text-center mb-6">Premium electronics and digital devices for global markets</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="fmcg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🥤</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Food & Beverages</h3>
+                    <p class="text-gray-600 text-center mb-6">World-class food products and beverage brands</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="commodities">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🌾</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Agriculture Products</h3>
+                    <p class="text-gray-600 text-center mb-6">Premium agricultural commodities and raw materials</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="commodities">
+                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Energy Resources</h3>
+                    <p class="text-gray-600 text-center mb-6">Sustainable energy solutions and petroleum products</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="automotive">
+                    <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🚗</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Automobiles</h3>
+                    <p class="text-gray-600 text-center mb-6">Premium vehicles and automotive solutions worldwide</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+                
+                <div class="product-card neumorphism rounded-2xl p-6 card-hover" data-category="automotive">
+                    <div class="w-20 h-20 bg-gradient-to-br from-gray-500 to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">⚙️</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-3 text-center">Auto Parts & Tires</h3>
+                    <p class="text-gray-600 text-center mb-6">Quality automotive components and tire solutions</p>
+                    <button class="w-full border-2 border-emerald-500 text-emerald-600 py-3 rounded-lg font-medium hover:bg-emerald-50 transition-all">
+                        Request Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Client Success Stories
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Trusted by industry leaders worldwide
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neumorphism rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">A</span>
+                        </div>
+                        <div>
+                            <h4 class="font-jakarta font-bold text-gray-900">Ahmed Al-Mansouri</h4>
+                            <p class="text-gray-600 text-sm">Gulf Trading Co., Dubai</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Victory Trading has been our reliable partner for FMCG distribution across ASEAN markets. 
+                        Their expertise and network are unmatched in the industry."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">P</span>
+                        </div>
+                        <div>
+                            <h4 class="font-jakarta font-bold text-gray-900">Priya Sharma</h4>
+                            <p class="text-gray-600 text-sm">Mumbai Exports Ltd., India</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Excellent logistics solutions and competitive pricing. They've helped us expand our 
+                        commodity trading operations significantly across multiple countries."
+                    </p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-6">
+                        Let's Trade Together
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Ready to expand your global reach? Connect with our team today.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-emerald-600 text-xl">📞</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">+971-XX-XXXXXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-emerald-600 text-xl">✉️</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@victorytrading.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                                <span class="text-emerald-600 text-xl">📍</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Headquarters</h4>
+                                <p class="text-gray-600">Dubai, United Arab Emirates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="neumorphism rounded-2xl p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <input type="email" placeholder="Email Address" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <select required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                <option value="">Select Service</option>
+                                <option value="fmcg">FMCG Products</option>
+                                <option value="commodities">Commodities Trading</option>
+                                <option value="automotive">Automotive Solutions</option>
+                                <option value="export">Export Services</option>
+                                <option value="import">Import Solutions</option>
+                                <option value="logistics">Global Logistics</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <textarea rows="4" placeholder="Your Message" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-4 rounded-lg font-semibold hover:bg-emerald-600 transition-all transform hover:scale-105 shadow-emerald-500/25">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <div>
+                            <h3 class="font-jakarta font-bold text-xl">Victory International Trading LLC</h3>
+                            <p class="text-gray-400 text-sm">Global Trade Solutions Since 1988</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Leading the future of international trade with innovative solutions, 
+                        trusted partnerships, and unmatched global reach.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <span class="text-sm">in</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <span class="text-sm">tw</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors">
+                            <span class="text-sm">fb</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-jakarta font-bold text-lg mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-300 hover:text-emerald-400 transition-colors">FMCG Products</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-emerald-400 transition-colors">Commodities Trading</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-emerald-400 transition-colors">Automotive Solutions</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-emerald-400 transition-colors">Global Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-jakarta font-bold text-lg mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-300 hover:text-emerald-400 transition-colors">About Us</a></li>
+                        <li><a href="#network" class="text-gray-300 hover:text-emerald-400 transition-colors">Global Network</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-emerald-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Victory International Trading LLC. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">×</button>
+            <h3 class="text-2xl font-jakarta font-bold text-gray-900 mb-6">Request Quote</h3>
+            <form class="space-y-4">
+                <input type="text" placeholder="Company Name" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                <input type="text" placeholder="Contact Person" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                <input type="email" placeholder="Email Address" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                <select required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                    <option value="">Product Category</option>
+                    <option value="fmcg">FMCG Products</option>
+                    <option value="commodities">Commodities</option>
+                    <option value="automotive">Automotive</option>
+                </select>
+                <textarea rows="3" placeholder="Product Details" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors resize-none"></textarea>
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors">
+                    Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Product filter functionality
+        const filterButtons = document.querySelectorAll('.product-filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-emerald-500', 'text-white');
+                    btn.classList.add('border-2', 'border-emerald-500', 'text-emerald-600');
+                });
+                button.classList.add('active', 'bg-emerald-500', 'text-white');
+                button.classList.remove('border-2', 'border-emerald-500', 'text-emerald-600');
+                
+                // Filter products
+                productCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.classList.add('animate-scale-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Quote modal functionality
+        const getQuoteButtons = document.querySelectorAll('[href="#"], button:contains("Get Quote")');
+        const quoteModal = document.getElementById('quoteModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Open modal
+        document.addEventListener('click', (e) => {
+            if (e.target.textContent.includes('Get Quote') || e.target.textContent.includes('Request Quote')) {
+                e.preventDefault();
+                quoteModal.classList.remove('hidden');
+            }
+        });
+
+        // Close modal
+        closeModal?.addEventListener('click', () => {
+            quoteModal.classList.add('hidden');
+        });
+
+        // Close modal on backdrop click
+        quoteModal?.addEventListener('click', (e) => {
+            if (e.target === quoteModal) {
+                quoteModal.classList.add('hidden');
+            }
+        });
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you within 24 hours.');
+                if (quoteModal && !quoteModal.classList.contains('hidden')) {
+                    quoteModal.classList.add('hidden');
+                }
+                form.reset();
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover, .neumorphism').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>

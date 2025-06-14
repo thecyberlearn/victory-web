@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory International Trading LLC - Quick and Reliable International Trade Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-slide-up { animation: slideUp 0.8s ease-out; }
+        .animate-fade-in { animation: fadeIn 1s ease-out; }
+        .animate-pulse-slow { animation: pulse 2s ease-in-out infinite; }
+        
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(96, 165, 250, 0.7) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .brand-logo {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .brand-logo:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3b82f6;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center mr-3">
+                                <span class="text-white font-bold text-xl">V</span>
+                            </div>
+                            <div>
+                                <h1 class="font-jakarta font-bold text-xl text-gray-900">Victory</h1>
+                                <p class="text-xs text-gray-500 -mt-1">International Trading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#products" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Products</a>
+                        <a href="#network" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Global Reach</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <button class="gradient-bg text-white px-6 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 800\"><defs><linearGradient id=\"grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"><stop offset=\"0%\" style=\"stop-color:%23dbeafe;stop-opacity:1\" /><stop offset=\"100%\" style=\"stop-color:%23bfdbfe;stop-opacity:1\" /></linearGradient></defs><rect width=\"1200\" height=\"800\" fill=\"url(%23grad)\"/><g opacity=\"0.1\"><circle cx=\"200\" cy=\"150\" r=\"80\" fill=\"%233b82f6\"/><circle cx=\"900\" cy=\"200\" r=\"120\" fill=\"%231e40af\"/><circle cx=\"300\" cy=\"600\" r=\"100\" fill=\"%232563eb\"/><circle cx=\"1000\" cy=\"500\" r=\"90\" fill=\"%2360a5fa\"/></g></svg>');">
+        </div>
+        <div class="hero-overlay absolute inset-0"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="animate-slide-up">
+                <h1 class="text-4xl md:text-6xl font-jakarta font-bold mb-6">
+                    Quick and Reliable<br>
+                    <span class="text-yellow-300">International Trade Solution</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    Victory International Trading is an international company operating in the field of distribution, 
+                    export and import in the FMCG and Commodity sector. With offices in Dubai, Singapore, India, 
+                    Myanmar & Indonesia and experience of more than 35 years we have built a strong network globally.
+                </p>
+                <p class="text-lg mb-10 max-w-3xl mx-auto opacity-80">
+                    The established partnership, respect and mutual trust are core values of the company. 
+                    We ensure fast delivery and competitive prices.
+                </p>
+            </div>
+            
+            <div class="animate-fade-in flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <button class="gradient-bg text-white px-8 py-4 rounded-xl text-lg font-semibold hover:opacity-90 transition-all transform hover:scale-105">
+                    Get Free Quotation
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                    Our Products
+                </button>
+            </div>
+            
+            <!-- Floating Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="glassmorphism rounded-xl p-6 animate-float">
+                    <div class="stats-counter mb-2">35+</div>
+                    <div class="text-sm opacity-90">Years Experience</div>
+                </div>
+                <div class="glassmorphism rounded-xl p-6 animate-float" style="animation-delay: 0.5s;">
+                    <div class="stats-counter mb-2">1000+</div>
+                    <div class="text-sm opacity-90">Products</div>
+                </div>
+                <div class="glassmorphism rounded-xl p-6 animate-float" style="animation-delay: 1s;">
+                    <div class="stats-counter mb-2">5+</div>
+                    <div class="text-sm opacity-90">Countries</div>
+                </div>
+                <div class="glassmorphism rounded-xl p-6 animate-float" style="animation-delay: 1.5s;">
+                    <div class="stats-counter mb-2">100%</div>
+                    <div class="text-sm opacity-90">Trusted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Partners Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Trusted by Leading Global Brands
+                </h2>
+                <p class="text-xl text-gray-600">
+                    We deal with premium FMCG brands and trusted partners worldwide
+                </p>
+            </div>
+            
+            <!-- Personal Care & Beauty Brands -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Personal Care & Beauty</h3>
+                <div class="brand-grid">
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-600 font-bold text-lg">Dove</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-700 font-bold text-lg">Head & Shoulders</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">Old Spice</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-gray-800 font-bold text-lg">L'ORÉAL</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-yellow-600 font-bold text-lg">PANTENE</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-800 font-bold text-lg">Gillette</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-700 font-bold text-lg">Colgate</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-teal-600 font-bold text-lg">Oral-B</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Food & Beverage Brands -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Food & Beverages</h3>
+                <div class="brand-grid">
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-800 font-bold text-lg">Nestlé</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">Kraft</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-600 font-bold text-lg">Unilever</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-700 font-bold text-lg">Kellogg's</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">Campbell's</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-green-600 font-bold text-lg">Knorr</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-orange-600 font-bold text-lg">Uncle Ben's</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-700 font-bold text-lg">Quaker</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Confectionery Brands -->
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Confectionery & Snacks</h3>
+                <div class="brand-grid">
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-700 font-bold text-lg">Mars</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-800 font-bold text-lg">SNICKERS</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">KitKat</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-purple-700 font-bold text-lg">Cadbury</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-yellow-600 font-bold text-lg">FERRERO ROCHER</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-brown-700 font-bold text-lg">HERSHEY'S</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">Skittles</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-800 font-bold text-lg">OREO</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beverages -->
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center">Beverages</h3>
+                <div class="brand-grid">
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-600 font-bold text-lg">Coca-Cola</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-700 font-bold text-lg">Pepsi</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-green-600 font-bold text-lg">Sprite</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-yellow-600 font-bold text-lg">Lipton</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-orange-600 font-bold text-lg">Fanta</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-red-700 font-bold text-lg">Red Bull</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-green-700 font-bold text-lg">Starbucks</span>
+                    </div>
+                    <div class="brand-logo bg-white rounded-lg flex items-center justify-center p-4">
+                        <span class="text-blue-600 font-bold text-lg">NESTEA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-6">
+                        Connected to each corner of the Earth
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        With Victory International Trading's strong worldwide logistic network we ensure safe delivery 
+                        of your consignment within the committed time frame.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-jakarta font-bold text-gray-900 mb-6">
+                            A Trusted Brand with Experience
+                        </h3>
+                        <p class="text-gray-600 mb-6">
+                            We are dealing with more than 1000 products since 35+ successful years into various global markets. 
+                            We are trusted solution provider by many industries like:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-2xl">🛒</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Branded FMCG</h4>
+                                    <p class="text-sm text-gray-600">Consumer goods distribution</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-2xl">📦</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Commodities</h4>
+                                    <p class="text-sm text-gray-600">Raw materials trading</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-yellow-50 rounded-lg">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-2xl">🚗</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Tyre & Cars</h4>
+                                    <p class="text-sm text-gray-600">Automotive solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                    <span class="text-2xl">🌐</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Global Logistics</h4>
+                                    <p class="text-sm text-gray-600">Worldwide distribution</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+                        <div class="grid grid-cols-2 gap-8 text-center">
+                            <div class="bg-white rounded-xl p-6 card-hover">
+                                <div class="text-4xl font-bold text-blue-600 mb-2">1000+</div>
+                                <div class="text-gray-600 font-medium">Dealt with Products</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 card-hover">
+                                <div class="text-4xl font-bold text-blue-600 mb-2">5+</div>
+                                <div class="text-gray-600 font-medium">Global Reach Countries</div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 card-hover col-span-2">
+                                <div class="text-4xl font-bold text-blue-600 mb-2">35+</div>
+                                <div class="text-gray-600 font-medium">Years of Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse-slow">
+                        <span class="text-2xl">✨</span>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-full flex items-center justify-center animate-float">
+                        <span class="text-xl">🌍</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Network -->
+    <section id="network" class="section-padding bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold mb-4">
+                    Global Reach: 5+ Countries
+                </h2>
+                <p class="text-xl opacity-90">
+                    Strategically located offices across key international markets
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glassmorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🇦🇪</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold mb-2">Dubai, UAE</h3>
+                    <p class="opacity-90 mb-3">Headquarters & Regional Hub</p>
+                    <p class="text-sm opacity-80">📞 +971-XX-XXXXXXX</p>
+                    <p class="text-sm opacity-80">✉️ dubai@victory.com</p>
+                </div>
+                
+                <div class="glassmorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🇸🇬</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold mb-2">Singapore</h3>
+                    <p class="opacity-90 mb-3">ASEAN Operations Center</p>
+                    <p class="text-sm opacity-80">📞 +65-XXXX-XXXX</p>
+                    <p class="text-sm opacity-80">✉️ singapore@victory.com</p>
+                </div>
+                
+                <div class="glassmorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🇮🇳</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold mb-2">Mumbai, India</h3>
+                    <p class="opacity-90 mb-3">South Asia Operations</p>
+                    <p class="text-sm opacity-80">📞 +91-XX-XXXXXXXX</p>
+                    <p class="text-sm opacity-80">✉️ india@victory.com</p>
+                </div>
+                
+                <div class="glassmorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🇲🇲</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold mb-2">Yangon, Myanmar</h3>
+                    <p class="opacity-90 mb-3">Myanmar Market Access</p>
+                    <p class="text-sm opacity-80">📞 +95-X-XXXXXXX</p>
+                    <p class="text-sm opacity-80">✉️ myanmar@victory.com</p>
+                </div>
+                
+                <div class="glassmorphism rounded-2xl p-6 text-center card-hover">
+                    <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🇮🇩</span>
+                    </div>
+                    <h3 class="text-lg font-jakarta font-bold mb-2">Jakarta, Indonesia</h3>
+                    <p class="opacity-90 mb-3">Indonesia Operations</p>
+                    <p class="text-sm opacity-80">📞 +62-XX-XXXXXXXX</p>
+                    <p class="text-sm opacity-80">✉️ indonesia@victory.com</p>
+                </div>
+            </div>
+            
+            <!-- World Map Visualization -->
+            <div class="mt-16 text-center">
+                <div class="relative bg-white bg-opacity-10 rounded-2xl p-8 backdrop-blur-sm">
+                    <h3 class="text-2xl font-jakarta font-bold mb-6">Our Global Presence</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-4 text-sm">
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🇦🇪 UAE</span>
+                        <span class="text-yellow-300">→</span>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🇸🇬 Singapore</span>
+                        <span class="text-yellow-300">→</span>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🇮🇳 India</span>
+                        <span class="text-yellow-300">→</span>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🇲🇲 Myanmar</span>
+                        <span class="text-yellow-300">→</span>
+                        <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">🇮🇩 Indonesia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Our Product Categories
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Comprehensive range of products across multiple industries
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center card-hover shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🛒</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Branded FMCG</h3>
+                    <p class="text-gray-600 mb-6">Fast-moving consumer goods from leading global brands</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Personal Care Products</li>
+                        <li>• Household Items</li>
+                        <li>• Beauty & Cosmetics</li>
+                        <li>• Health & Wellness</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">📦</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Commodities</h3>
+                    <p class="text-gray-600 mb-6">Raw materials and bulk commodities for industrial use</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Agricultural Products</li>
+                        <li>• Industrial Raw Materials</li>
+                        <li>• Energy Resources</li>
+                        <li>• Metals & Minerals</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🚗</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Tyre & Cars</h3>
+                    <p class="text-gray-600 mb-6">Automotive solutions including vehicles and components</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Premium Vehicle Brands</li>
+                        <li>• Tire Solutions</li>
+                        <li>• Auto Parts & Accessories</li>
+                        <li>• Maintenance Products</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center card-hover shadow-lg">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl text-white">🥤</span>
+                    </div>
+                    <h3 class="text-xl font-jakarta font-bold text-gray-900 mb-4">Food & Beverages</h3>
+                    <p class="text-gray-600 mb-6">Premium food products and beverage brands worldwide</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Confectionery & Snacks</li>
+                        <li>• Beverages & Drinks</li>
+                        <li>• Packaged Foods</li>
+                        <li>• Specialty Products</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section-padding gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold mb-6">
+                    Contact us to Grow your Business
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    You can reach to us for free quotation. Let's discuss how we can help expand your global reach.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <button class="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                        Get Free Quotation
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                        Schedule a Call
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glassmorphism rounded-xl p-6">
+                        <div class="text-2xl mb-3">📞</div>
+                        <h4 class="font-semibold mb-2">Call Us</h4>
+                        <p class="text-sm opacity-90">+971-XX-XXXXXXX</p>
+                    </div>
+                    <div class="glassmorphism rounded-xl p-6">
+                        <div class="text-2xl mb-3">✉️</div>
+                        <h4 class="font-semibold mb-2">Email Us</h4>
+                        <p class="text-sm opacity-90">info@victorytrading.com</p>
+                    </div>
+                    <div class="glassmorphism rounded-xl p-6">
+                        <div class="text-2xl mb-3">📍</div>
+                        <h4 class="font-semibold mb-2">Visit Us</h4>
+                        <p class="text-sm opacity-90">Dubai, UAE</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-jakarta font-bold text-gray-900 mb-4">
+                    Get Your Free Quote Today
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Fill out the form below and we'll get back to you within 24 hours
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8 lg:p-12">
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
+                        <input type="text" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Product Category *</label>
+                        <select required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                            <option value="">Select Category</option>
+                            <option value="fmcg">Branded FMCG</option>
+                            <option value="commodities">Commodities</option>
+                            <option value="automotive">Tyre & Cars</option>
+                            <option value="food">Food & Beverages</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Country/Region</label>
+                        <input type="text" placeholder="Your location"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message / Product Details *</label>
+                        <textarea rows="5" required placeholder="Please describe your requirements, quantities, and any specific details..."
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"></textarea>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <button type="submit" 
+                            class="w-full gradient-bg text-white py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all transform hover:scale-105">
+                            Send Free Quote Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <div>
+                            <h3 class="font-jakarta font-bold text-xl">Victory International Trading LLC</h3>
+                            <p class="text-gray-400 text-sm">Quick and Reliable International Trade Solution</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        With 35+ years of experience and offices across 5 countries, we are your trusted partner 
+                        for international trade solutions in FMCG, commodities, and automotive sectors.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <span class="text-sm">📱</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <span class="text-sm">💼</span>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <span class="text-sm">✉️</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-jakarta font-bold text-lg mb-6">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#products" class="text-gray-300 hover:text-blue-400 transition-colors">Branded FMCG</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-blue-400 transition-colors">Commodities</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-blue-400 transition-colors">Tyre & Cars</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-blue-400 transition-colors">Food & Beverages</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-jakarta font-bold text-lg mb-6">Global Offices</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#network" class="text-gray-300 hover:text-blue-400 transition-colors">🇦🇪 Dubai, UAE</a></li>
+                        <li><a href="#network" class="text-gray-300 hover:text-blue-400 transition-colors">🇸🇬 Singapore</a></li>
+                        <li><a href="#network" class="text-gray-300 hover:text-blue-400 transition-colors">🇮🇳 Mumbai, India</a></li>
+                        <li><a href="#network" class="text-gray-300 hover:text-blue-400 transition-colors">🇲🇲 Yangon, Myanmar</a></li>
+                        <li><a href="#network" class="text-gray-300 hover:text-blue-400 transition-colors">🇮🇩 Jakarta, Indonesia</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Victory International Trading LLC. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Terms of Service</a>
+                        <a href="#contact" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+            <h3 class="text-2xl font-jakarta font-bold text-gray-900 mb-6">Quick Quote Request</h3>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                <input type="email" placeholder="Email Address" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                <input type="text" placeholder="Company Name" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                <select required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors">
+                    <option value="">Product Category</option>
+                    <option value="fmcg">Branded FMCG</option>
+                    <option value="commodities">Commodities</option>
+                    <option value="automotive">Tyre & Cars</option>
+                    <option value="food">Food & Beverages</option>
+                </select>
+                <textarea rows="3" placeholder="Your Requirements" required
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"></textarea>
+                <button type="submit"
+                    class="w-full gradient-bg text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                    Submit Quote Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Quote modal functionality
+        const quoteModal = document.getElementById('quoteModal');
+        const closeModal = document.getElementById('closeModal');
+
+        // Open modal
+        document.addEventListener('click', (e) => {
+            if (e.target.textContent.includes('Get Quote') || 
+                e.target.textContent.includes('Get Free Quotation') ||
+                e.target.textContent.includes('Quote Request')) {
+                e.preventDefault();
+                quoteModal.classList.remove('hidden');
+            }
+        });
+
+        // Close modal
+        closeModal?.addEventListener('click', () => {
+            quoteModal.classList.add('hidden');
+        });
+
+        // Close modal on backdrop click
+        quoteModal?.addEventListener('click', (e) => {
+            if (e.target === quoteModal) {
+                quoteModal.classList.add('hidden');
+            }
+        });
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you within 24 hours with your free quotation.');
+                if (quoteModal && !quoteModal.classList.contains('hidden')) {
+                    quoteModal.classList.add('hidden');
+                }
+                form.reset();
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover, .brand-logo').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/[0-9]/g, '');
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 40);
+            });
+        }
+
+        // Trigger counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const heroSection = document.querySelector('#home');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory International Trading - Quick and Reliable International Trade Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #FAFBFC;
+            --bg-tertiary: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-elevated: #FFFFFF;
+            --accent-primary: #2563EB;
+            --accent-secondary: #7C3AED;
+            --accent-tertiary: #059669;
+            --accent-quaternary: #DC2626;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --text-muted: #64748B;
+            --text-light: #94A3B8;
+            --border-light: #E2E8F0;
+            --border-medium: #CBD5E1;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+            --gradient-secondary: linear-gradient(135deg, #059669 0%, #2563EB 100%);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .cursor-ring {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transition: all 0.3s ease;
+            opacity: 0.3;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .cta-nav {
+            background: var(--gradient-primary);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #FAFBFC 0%, #F8FAFC 50%, #F1F5F9 100%);
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            animation: float 12s ease-in-out infinite;
+        }
+        
+        .shape-1 { width: 120px; height: 120px; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape-2 { width: 80px; height: 80px; top: 70%; right: 10%; animation-delay: 3s; }
+        .shape-3 { width: 150px; height: 150px; bottom: 10%; left: 15%; animation-delay: 6s; }
+        .shape-4 { width: 60px; height: 60px; top: 30%; right: 25%; animation-delay: 9s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(15px) rotate(240deg); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: 0 40px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 28px;
+            color: var(--accent-primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 900px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            padding: 16px 38px;
+            border-radius: 50px;
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 120px 0;
+            background: var(--bg-primary);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        
+        .about-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        
+        .about-text p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .about-visual {
+            position: relative;
+        }
+        
+        .stats-container {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Industries Section */
+        .industries {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .industry-card {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent-primary);
+        }
+        
+        .industry-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.03), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .industry-card:hover::before {
+            left: 100%;
+        }
+        
+        .industry-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 0 auto 25px;
+        }
+        
+        .industry-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .industry-desc {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        /* Global Reach Section */
+        .global-reach {
+            padding: 120px 0;
+            background: var(--bg-primary);
+        }
+        
+        .reach-visual {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .reach-graphic {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 60px;
+            display: inline-block;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reach-graphic::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+        }
+        
+        .reach-stats {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .reach-stat {
+            text-align: center;
+        }
+        
+        .reach-stat .number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 64px;
+            font-weight: 800;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .reach-stat .label {
+            color: var(--text-secondary);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .office-list {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .office-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+        
+        .office-item:last-child {
+            border-bottom: none;
+        }
+        
+        .office-item:hover {
+            background: var(--bg-tertiary);
+            margin: 0 -20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
+        }
+        
+        .office-flag {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        
+        .office-info strong {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+        
+        .office-info {
+            color: var(--text-secondary);
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+        
+        .contact-form {
+            background: var(--surface);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 50px;
+            margin-top: 60px;
+            box-shadow: var(--shadow-lg);
+            text-align: left;
+        }
+        
+        .form-title {
+            font-family: 'Poppins', sans-serif;
+            color: var(--accent-primary);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: var(--bg-tertiary);
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--gradient-primary);
+            border: none;
+            border-radius: 12px;
+            padding: 18px;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 80px 0 40px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-brand h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60A5FA, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .footer-brand p {
+            color: #CBD5E1;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #94A3B8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .footer-section a:hover {
+            color: #60A5FA;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 40px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #64748B;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 50px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 40px; }
+            .reach-stats { flex-direction: column; gap: 40px; }
+            .container, .nav-container { padding: 0 20px; }
+            .hero-cta { flex-direction: column; align-items: center; }
+        }
+        
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger animation for cards */
+        .industry-card {
+            animation-delay: calc(var(--delay) * 0.1s);
+        }
+        
+        /* Hover effects for interactive elements */
+        .interactive:hover {
+            cursor: none;
+        }
+        
+        .interactive:hover .cursor {
+            transform: scale(2);
+            background: var(--accent-secondary);
+        }
+        
+        .interactive:hover .cursor-ring {
+            transform: scale(1.5);
+            border-color: var(--accent-secondary);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-ring"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Victory</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link interactive">Home</a></li>
+                <li><a href="#about" class="nav-link interactive">About</a></li>
+                <li><a href="#services" class="nav-link interactive">Services</a></li>
+                <li><a href="#contact" class="nav-link interactive">Contact</a></li>
+            </ul>
+            <button class="cta-nav interactive">Get Quote</button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="floating-elements">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Quick and Reliable<br>International Trade Solution</h1>
+            <p class="hero-subtitle">Victory International Trading</p>
+            <p class="hero-description">
+                Victory International Trading is an international company operating in the field of distribution, 
+                export and import in the FMCG and Commodity sector. With offices in Dubai, Singapore, India, 
+                Myanmar & Indonesia and experience of more than 35 years we have built a strong network globally. 
+                The established partnership, respect and mutual trust are core values of the company.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary interactive">Get Free Quote</button>
+                <button class="btn-secondary interactive">Learn More</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries Section -->
+    <section id="services" class="industries">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Trusted Solution Provider</h2>
+            <p class="section-subtitle scroll-reveal">
+                We are trusted solution provider by many industries like
+            </p>
+            
+            <div class="industries-grid scroll-reveal">
+                <div class="industry-card interactive" style="--delay: 1;">
+                    <div class="industry-number">1</div>
+                    <h3 class="industry-name">Branded FMCG</h3>
+                    <p class="industry-desc">
+                        Fast-moving consumer goods distribution across global markets with established supply chains and trusted brand partnerships
+                    </p>
+                </div>
+                
+                <div class="industry-card interactive" style="--delay: 2;">
+                    <div class="industry-number">2</div>
+                    <h3 class="industry-name">Commodities</h3>
+                    <p class="industry-desc">
+                        Raw materials and commodity sourcing worldwide with competitive pricing, quality assurance and reliable delivery
+                    </p>
+                </div>
+                
+                <div class="industry-card interactive" style="--delay: 3;">
+                    <div class="industry-number">3</div>
+                    <h3 class="industry-name">Tyre</h3>
+                    <p class="industry-desc">
+                        Premium tire solutions and distribution services across multiple international markets with top brand partnerships
+                    </p>
+                </div>
+                
+                <div class="industry-card interactive" style="--delay: 4;">
+                    <div class="industry-number">4</div>
+                    <h3 class="industry-name">Cars</h3>
+                    <p class="industry-desc">
+                        Automotive trading including vehicles and automotive parts distribution services with comprehensive solutions
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Global Reach Section -->
+    <section class="global-reach">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Global Reach</h2>
+            <p class="section-subtitle scroll-reveal">
+                Strategic presence across key international markets with 5+ countries coverage
+            </p>
+            
+            <div class="reach-visual scroll-reveal">
+                <div class="reach-graphic">
+                    <div class="reach-stats">
+                        <div class="reach-stat">
+                            <div class="number">1000+</div>
+                            <div class="label">Products Dealt</div>
+                        </div>
+                        <div class="reach-stat">
+                            <div class="number">5+</div>
+                            <div class="label">Countries</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-grid scroll-reveal">
+                <div class="about-text">
+                    <h3>Global Network Coverage</h3>
+                    <p>
+                        Our strategic offices are located in key international trading hubs, enabling us to provide 
+                        comprehensive coverage across major markets and ensure seamless operations worldwide.
+                    </p>
+                    <p>
+                        With decades of experience and local expertise in each region, we facilitate smooth 
+                        international trade operations and maintain strong relationships with partners globally.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <div class="office-list">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 25px; font-family: 'Poppins', sans-serif; font-weight: 700; text-align: center;">
+                            Our Global Offices
+                        </h4>
+                        <div class="office-item">
+                            <span class="office-flag">🇦🇪</span>
+                            <div class="office-info">
+                                <strong>Dubai, UAE</strong> - Middle East Hub & Headquarters
+                            </div>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-flag">🇸🇬</span>
+                            <div class="office-info">
+                                <strong>Singapore</strong> - ASEAN Operations Center
+                            </div>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-flag">🇮🇳</span>
+                            <div class="office-info">
+                                <strong>India</strong> - South Asia Gateway
+                            </div>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-flag">🇲🇲</span>
+                            <div class="office-info">
+                                <strong>Myanmar</strong> - Emerging Markets Access
+                            </div>
+                        </div>
+                        <div class="office-item">
+                            <span class="office-flag">🇮🇩</span>
+                            <div class="office-info">
+                                <strong>Indonesia</strong> - Southeast Asia Operations
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="scroll-reveal">Contact us to Grow your Business</h2>
+                <p class="scroll-reveal">
+                    You can reach to us for free quotation. Let's discuss how we can help expand your global reach 
+                    with our comprehensive trade solutions and decades of international experience.
+                </p>
+                
+                <div class="contact-form scroll-reveal">
+                    <h3 class="form-title">Request Free Quotation</h3>
+                    <form>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name *</label>
+                                <input type="text" id="company" name="company" required placeholder="Your company name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="industry">Industry Interest *</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="fmcg">Branded FMCG</option>
+                                <option value="commodities">Commodities</option>
+                                <option value="tyre">Tyre</option>
+                                <option value="cars">Cars</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="requirements">Your Requirements *</label>
+                            <textarea id="requirements" name="requirements" rows="5" required placeholder="Please describe your requirements, quantities, target markets, and any specific details that will help us provide you with an accurate quotation..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-submit interactive">Send Free Quote Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Victory</h3>
+                    <p>
+                        Leading international trade solutions since 1988. Connecting global markets with trust, 
+                        reliability, and comprehensive services across FMCG, commodities, automotive, and logistics sectors.
+                    </p>
+                    <div style="color: #60A5FA; font-size: 14px; margin-top: 20px; font-weight: 500;">
+                        🌍 Global Network • 📈 35+ Years Experience • 🤝 Trusted Partner
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services" class="interactive">Branded FMCG</a></li>
+                        <li><a href="#services" class="interactive">Commodities Trading</a></li>
+                        <li><a href="#services" class="interactive">Tyre Solutions</a></li>
+                        <li><a href="#services" class="interactive">Automotive Trading</a></li>
+                        <li><a href="#services" class="interactive">Global Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about" class="interactive">About Victory</a></li>
+                        <li><a href="#services" class="interactive">Global Network</a></li>
+                        <li><a href="#contact" class="interactive">Contact Us</a></li>
+                        <li><a href="#" class="interactive">Partnership</a></li>
+                        <li><a href="#" class="interactive">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Global Offices</h4>
+                    <ul>
+                        <li><a href="#" class="interactive">🇦🇪 Dubai, UAE</a></li>
+                        <li><a href="#" class="interactive">🇸🇬 Singapore</a></li>
+                        <li><a href="#" class="interactive">🇮🇳 Mumbai, India</a></li>
+                        <li><a href="#" class="interactive">🇲🇲 Yangon, Myanmar</a></li>
+                        <li><a href="#" class="interactive">🇮🇩 Jakarta, Indonesia</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Victory International Trading. All rights reserved. | Quick and Reliable International Trade Solution</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Custom Cursor Implementation
+        const cursor = document.querySelector('.cursor');
+        const cursorRing = document.querySelector('.cursor-ring');
+        
+        let mouseX = 0, mouseY = 0;
+        let ringX = 0, ringY = 0;
+        
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            cursor.style.left = mouseX - 4 + 'px';
+            cursor.style.top = mouseY - 4 + 'px';
+        });
+        
+        // Smooth ring animation
+        function animateRing() {
+            const dx = mouseX - ringX;
+            const dy = mouseY - ringY;
+            
+            ringX += dx * 0.15;
+            ringY += dy * 0.15;
+            
+            cursorRing.style.left = ringX - 16 + 'px';
+            cursorRing.style.top = ringY - 16 + 'px';
+            
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+        
+        // Interactive elements hover effects
+        const interactiveElements = document.querySelectorAll('.interactive');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.background = 'var(--accent-secondary)';
+                cursorRing.style.transform = 'scale(1.5)';
+                cursorRing.style.borderColor = 'var(--accent-secondary)';
+                cursorRing.style.opacity = '0.6';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.background = 'var(--accent-primary)';
+                cursorRing.style.transform = 'scale(1)';
+                cursorRing.style.borderColor = 'var(--accent-primary)';
+                cursorRing.style.opacity = '0.3';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -80px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all scroll reveal elements
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
+                navbar.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+                navbar.style.backdropFilter = 'blur(20px) saturate(180%)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Parallax effect for floating shapes
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.floating-shape');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.2;
+                const x = (mouseX - 0.5) * speed * 20;
+                const y = (mouseY - 0.5) * speed * 20;
+                
+                shape.style.transform += ` translate(${x}px, ${y}px)`;
+            });
+        });
+        
+        // Form submission with enhanced animation
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('.form-submit, .cta-nav, .btn-primary');
+                const originalText = submitBtn.textContent;
+                
+                // Submission animation sequence
+                submitBtn.style.background = 'linear-gradient(135deg, #F59E0B, #EF4444)';
+                submitBtn.textContent = 'Sending...';
+                submitBtn.style.transform = 'scale(0.98)';
+                
+                setTimeout(() => {
+                    submitBtn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                    submitBtn.textContent = '✓ Message Sent!';
+                    submitBtn.style.transform = 'scale(1)';
+                    
+                    setTimeout(() => {
+                        submitBtn.style.background = 'var(--gradient-primary)';
+                        submitBtn.textContent = originalText;
+                        
+                        // Show success message
+                        alert('Thank you for your inquiry! We will contact you within 24 hours with your free quotation.');
+                        form.reset();
+                    }, 2500);
+                }, 1500);
+            });
+        });
+        
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number, .number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/[0-9]/g, '');
+                let current = 0;
+                const increment = target / 80;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current) + suffix;
+                    }
+                }, 25);
+            });
+        }
+        
+        // Trigger counter animation when stats section becomes visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-container');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Stagger animation for industry cards
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.querySelectorAll('.industry-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 150);
+                    });
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const industriesGrid = document.querySelector('.industries-grid');
+        if (industriesGrid) {
+            cardObserver.observe(industriesGrid);
+            // Initially hide cards for stagger effect
+            industriesGrid.querySelectorAll('.industry-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+        }
+        
+        // Enhanced button hover effects
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.02)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+        
+        // Smooth page load animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Performance optimization for mobile devices
+        if (window.innerWidth <= 768) {
+            // Reduce animations on mobile
+            document.querySelectorAll('.floating-shape').forEach(shape => {
+                shape.style.animation = 'float 20s ease-in-out infinite';
+            });
+            
+            // Disable cursor effects on mobile
+            cursor.style.display = 'none';
+            cursorRing.style.display = 'none';
+        }
+        
+        // Console message for developers
+        console.log(`
+        🏢 VICTORY INTERNATIONAL TRADING
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        
+        📍 Global Network: 5+ Countries
+        📊 Experience: 35+ Years  
+        📦 Products: 1000+ Items
+        🤝 Trust: Established Partnerships
+        
+        Quick and Reliable International Trade Solution
+        Built with modern web technologies for optimal performance
+        
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        `);
+    </script>
+</body>
+</html>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title scroll-reveal">Connected to each corner of the Earth</h2>
+            <p class="section-subtitle scroll-reveal">
+                With Victory International Trading's strong worldwide logistic network we ensure safe delivery 
+                of your consignment within the committed time frame.
+            </p>
+            
+            <div class="about-grid scroll-reveal">
+                <div class="about-text">
+                    <h3>Victory International Trading – A Trusted Brand with Experience</h3>
+                    <p>
+                        We are dealing with more than 1000 products since 35+ successful years into various global markets. 
+                        We are trusted solution provider by many industries like:
+                    </p>
+                    <p>
+                        The main goal of Victory International Trading is not only supplying diverse products, 
+                        but also offering comprehensive solutions in all aspects related to export and import. 
+                        We ensure fast delivery and competitive prices.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <div class="stats-container">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Products Dealt</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Countries</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">35+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Trusted Solutions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
